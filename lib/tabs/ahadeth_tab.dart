@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../details/hadeth_details.dart';
 import '../models/hadeth_model.dart';
@@ -38,7 +39,7 @@ class _AhadethTabState extends State<AhadethTab> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
-              "Ahadeth ",
+              AppLocalizations.of(context)!.ahadeth,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyMedium,
             ),

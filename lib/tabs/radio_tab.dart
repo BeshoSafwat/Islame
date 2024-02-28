@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../my_theme.dart';
 
@@ -21,7 +22,7 @@ class _RadioTabState extends State<RadioTab> {
             height: 30,
           ),
           Text(
-            "Quran Broadcast",
+            AppLocalizations.of(context)!.quranradio,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           SizedBox(
