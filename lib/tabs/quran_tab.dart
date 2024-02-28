@@ -280,8 +280,11 @@ class QuranTab extends StatelessWidget {
                         thickness: 1.5,
                         color: Color(0xffB7935F),
 
+
+
                       ),
                       //VerticalDivider(thickness: 2,),
+
                       Expanded(
                         child: ListView.separated(
                           separatorBuilder: (context, index) => Divider(
@@ -296,10 +299,9 @@ class QuranTab extends StatelessWidget {
                                     arguments: SuraModel(
                                         name: suraNames[index], index: index));
                               },
-
                               child: Row(
                                 mainAxisAlignment:
-                                MainAxisAlignment.spaceAround,
+                                    MainAxisAlignment.spaceAround,
                                 children: [
                                   Expanded(
                                     child: Text(
@@ -330,7 +332,6 @@ class QuranTab extends StatelessWidget {
                   ),
                 ),
               ],
-
             ),
           ),
         ],
