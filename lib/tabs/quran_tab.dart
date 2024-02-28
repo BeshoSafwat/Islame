@@ -328,6 +328,7 @@ class QuranTab extends StatelessWidget {
                   ),
                 ),
               ],
+
             ),
           ),
         ],
