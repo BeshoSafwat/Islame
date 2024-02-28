@@ -295,6 +295,7 @@ class QuranTab extends StatelessWidget {
                                     arguments: SuraModel(
                                         name: suraNames[index], index: index));
                               },
+
                               child: Row(
                                 mainAxisAlignment:
                                 MainAxisAlignment.spaceAround,
