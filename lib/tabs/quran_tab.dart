@@ -279,6 +279,7 @@ class QuranTab extends StatelessWidget {
                       Divider(
                         thickness: 1.5,
                         color: Color(0xffB7935F),
+
                       ),
                       //VerticalDivider(thickness: 2,),
                       Expanded(
