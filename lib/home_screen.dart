@@ -4,6 +4,8 @@ import 'package:isllame/tabs/quran_tab.dart';
 import 'package:isllame/tabs/radio_tab.dart';
 import 'package:isllame/tabs/sebha_tab.dart';
 import 'package:isllame/tabs/settings_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 
 class HomeScreen extends StatefulWidget {
@@ -31,8 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Scaffold(
             appBar: AppBar(
               title: Text(
-
-                "Islame",
+              AppLocalizations.of(context)!.islamy,
               ),
             ),
             bottomNavigationBar: BottomNavigationBar(

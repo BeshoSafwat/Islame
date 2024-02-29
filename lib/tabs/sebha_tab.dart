@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../my_theme.dart';
 
@@ -50,7 +51,7 @@ class _SebhaTabState extends State<SebhaTab> {
               Container(
                 margin: EdgeInsets.only(bottom: 20),
                 child: Text(
-                  "Tasbeh Number",
+                  AppLocalizations.of(context)!.tasbehnumber,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),

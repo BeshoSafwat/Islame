@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../details/sura_details.dart';
 import '../models/sura_model.dart';
@@ -267,11 +268,11 @@ class QuranTab extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Text(
-                            "Surah Name",
+                            AppLocalizations.of(context)!.chaptername,
                             style: Theme.of(context).textTheme.bodyMedium,
                           ),
                           Text(
-                            "Verses Number",
+                            AppLocalizations.of(context)!.chapternumber,
                             style: Theme.of(context).textTheme.bodyMedium,
                           ),
                         ],
@@ -281,6 +282,7 @@ class QuranTab extends StatelessWidget {
                         color: Color(0xffB7935F),
                       ),
                       //VerticalDivider(thickness: 2,),
+
                       Expanded(
                         child: ListView.separated(
                           separatorBuilder: (context, index) => Divider(
@@ -297,7 +299,7 @@ class QuranTab extends StatelessWidget {
                               },
                               child: Row(
                                 mainAxisAlignment:
-                                MainAxisAlignment.spaceAround,
+                                    MainAxisAlignment.spaceAround,
                                 children: [
                                   Expanded(
                                     child: Text(

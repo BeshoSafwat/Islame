@@ -26,6 +26,7 @@ class MyThemeData {
     ),
     brightness: Brightness.light,
     appBarTheme: AppBarTheme(
+      elevation: 0,
         iconTheme: IconThemeData(
           color: Colors.black,
         ),
