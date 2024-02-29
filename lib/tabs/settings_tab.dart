@@ -9,7 +9,7 @@ class SettingsTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 38, horizontal: 18),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -21,14 +21,14 @@ class SettingsTab extends StatelessWidget {
             width: double.infinity,
             padding: EdgeInsets.all(12),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
+                borderRadius: BorderRadius.circular(15),
                 border: Border.all(color: MyThemeData.primaryColor)),
             child: Text(
               "Arabic",
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ),
-          SizedBox(height: MediaQuery.of(context).size.height * .04),
+          SizedBox(height: MediaQuery.of(context).size.height * .01),
           Text(
             AppLocalizations.of(context)!.theme,
             style: Theme.of(context).textTheme.bodyLarge,
@@ -37,7 +37,7 @@ class SettingsTab extends StatelessWidget {
             width: double.infinity,
             padding: EdgeInsets.all(12),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(15),
                 border: Border.all(color: MyThemeData.primaryColor)),
             child: Text(
               "Light",

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 import '../details/sura_details.dart';
 import '../models/sura_model.dart';
 
 class QuranTab extends StatelessWidget {
-  QuranTab({super.key});
+  const QuranTab({super.key});
 
   static const List<String> suraNames = [
     "الفاتحه",
@@ -245,89 +244,90 @@ class QuranTab extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-          Center(
-            child: Image.asset(
-              "assets/images/qur2an_screen_logo.png",
-              height: MediaQuery.of(context).size.height * .18,
-            ),
-          ),
           Expanded(
+            flex: 1,
+            child: Center(
+              child: Image.asset("assets/images/qur2an_screen_logo.png",
+                height: MediaQuery.of(context).size.height * .18)),
+          ),
+
+          Expanded(
+            flex: 3,
             child: Stack(
               alignment: Alignment.center,
               children: [
-                VerticalDivider(
+                const VerticalDivider(
                     thickness: 2, color: Color(0xffB7935F), indent: 9),
-                Expanded(
-                  child: Column(
-                    children: [
-                      Divider(
-                        thickness: 1.5,
-                        color: Color(0xffB7935F),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            AppLocalizations.of(context)!.chaptername,
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
-                          Text(
-                            AppLocalizations.of(context)!.chapternumber,
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
-                        ],
-                      ),
-                      Divider(
-                        thickness: 1.5,
-                        color: Color(0xffB7935F),
-                      ),
-                      //VerticalDivider(thickness: 2,),
-
-                      Expanded(
-                        child: ListView.separated(
-                          separatorBuilder: (context, index) => Divider(
-                            thickness: 1,
-                            color: Color(0xffB7935F),
-                          ),
-                          itemBuilder: (context, index) {
-                            return InkWell(
-                              onTap: () {
-                                Navigator.pushNamed(
-                                    context, SuraDetailsScreen.routeName,
-                                    arguments: SuraModel(
-                                        name: suraNames[index], index: index));
-                              },
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  Expanded(
-                                    child: Text(
-                                      suraNames[index],
-                                      textAlign: TextAlign.center,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyMedium,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Text(
-                                      "${versesNumber[index]}",
-                                      textAlign: TextAlign.center,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyMedium,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                          itemCount: suraNames.length,
+                Column(
+                  children: [
+                    const Divider(
+                      thickness: 1.5,
+                      color: Color(0xffB7935F),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text(
+                          AppLocalizations.of(context)!.chaptername,
+                          style: Theme.of(context).textTheme.bodyMedium,
                         ),
+                        Text(
+                          AppLocalizations.of(context)!.chapternumber,
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ),
+                      ],
+                    ),
+                    const Divider(
+                      thickness: 1.5,
+                      color: Color(0xffB7935F),
+                    ),
+                    //VerticalDivider(thickness: 2,),
+
+                    Expanded(
+                      flex: 1,
+                      child: ListView.separated(
+                        separatorBuilder: (context, index) => const Divider(
+                          thickness: 1,
+                          color: Color(0xffB7935F),
+                        ),
+                        itemBuilder: (context, index) {
+                          return InkWell(
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context,
+                                  SuraDetailsScreen.routeName,
+                                  arguments: SuraModel(
+                                      name: suraNames[index],
+                                      index: index
+                                  )
+                              );
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    suraNames[index],
+                                    textAlign: TextAlign.center,
+                                    style: Theme.of(context).textTheme.bodyMedium,
+                                  ),
+                                ),
+                                Expanded(
+                                  flex:1,
+                                  child: Text(
+                                    "${versesNumber[index]}",
+                                    textAlign: TextAlign.center,
+                                    style: Theme.of(context).textTheme.bodyMedium,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                        itemCount: suraNames.length,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ],
             ),
