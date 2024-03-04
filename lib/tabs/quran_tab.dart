@@ -248,11 +248,11 @@ class QuranTab extends StatelessWidget {
             flex: 1,
             child: Center(
               child: Image.asset("assets/images/qur2an_screen_logo.png",
-                height: MediaQuery.of(context).size.height * .18)),
+                height: MediaQuery.of(context).size.height * .17)),
           ),
 
           Expanded(
-            flex: 3,
+            flex: 4,
             child: Stack(
               alignment: Alignment.center,
               children: [
