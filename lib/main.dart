@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:isllame/providers/my_provider.dart';
 import 'package:provider/provider.dart';
-import 'details/hadeth_details.dart';
-import 'details/sura_details.dart';
+import 'hadeth_details/hadeth_details.dart';
+import 'sura_details/sura_details.dart';
 import 'home_screen.dart';
 import 'my_theme.dart';
 
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: MyThemeData.lightTheme,
       darkTheme: MyThemeData.darkTheme,
-      themeMode: ThemeMode.light,
+      themeMode: provider.themeMode,
       locale: Locale("${provider.languageCode}"),
       routes: {
         HomeScreen.routeName: (context) => HomeScreen(),

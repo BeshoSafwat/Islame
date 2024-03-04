@@ -10,6 +10,7 @@ class HadethDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var model = ModalRoute.of(context)!.settings.arguments as HadethModel;
+
     return SafeArea(
       child: Container(
         decoration: BoxDecoration(
