@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:isllame/my_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
-
 import '../bottom_sheets/language_bottom_sheet.dart';
 import '../bottom_sheets/theme_bottom_sheet.dart';
 import '../providers/my_provider.dart';
@@ -41,7 +40,7 @@ class SettingsTab extends StatelessWidget {
               width: double.infinity,
               padding: EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Colors.white,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(15),
                   border: Border.all(color: MyThemeData.primaryColor)),
               child: Center(
@@ -75,7 +74,7 @@ class SettingsTab extends StatelessWidget {
               width: double.infinity,
               padding: EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Colors.white,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(15),
                   border: Border.all(color: MyThemeData.primaryColor)),
               child: Center(

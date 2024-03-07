@@ -22,10 +22,9 @@ class ThemeBottomSheet extends StatelessWidget {
                 provider.changeTheme(ThemeMode.light);
               },
               child: Text("Light",
-                  style: TextStyle(
-                      color: provider.themeMode == ThemeMode.light
-                          ? MyThemeData.primaryColor
-                          : MyThemeData.scecondryColor)),
+                  style:   provider.themeMode == ThemeMode.light
+                          ? Theme.of(context).textTheme.displayLarge
+                          : Theme.of(context).textTheme.displayMedium),
             ),
             if (provider.themeMode == ThemeMode.light) ...[
               Icon(Icons.done, size: 30, color: MyThemeData.primaryColor),
@@ -43,10 +42,10 @@ class ThemeBottomSheet extends StatelessWidget {
                 provider.changeTheme(ThemeMode.dark);
               },
               child: Text("Dark",
-                  style: TextStyle(
-                      color: provider.themeMode == ThemeMode.dark
-                          ? MyThemeData.primaryColor
-                          : MyThemeData.scecondryColor)),
+                  style:  provider.themeMode == ThemeMode.dark
+                      ? Theme.of(context).textTheme.displayLarge
+                      : Theme.of(context).textTheme.displayMedium
+              ),
             ),
             if (provider.themeMode == ThemeMode.dark) ...[
               Icon(Icons.done, size: 30, color: MyThemeData.primaryColor),

@@ -5,11 +5,19 @@ class MyThemeData {
   static const Color scecondryColor = Color(0xff242424);
   static Color darkPrimary = Color(0xff141A2E);
   static Color darkSecondary = Color(0xffFACC1D);
-  static Color white = Colors.white;
-
 
   static ThemeData lightTheme = ThemeData(
     textTheme: TextTheme(
+      displayMedium: TextStyle(
+          fontFamily: 'Amiri',
+          color: Colors.black,
+          fontSize: 25,
+          fontWeight: FontWeight.bold),
+      displayLarge: TextStyle(
+          fontFamily: 'Amiri',
+          color: primaryColor,
+          fontSize: 25,
+          fontWeight: FontWeight.bold),
       titleMedium: TextStyle(
           fontFamily: 'Amiri',
           color: Colors.white,
@@ -63,10 +71,22 @@ class MyThemeData {
     scaffoldBackgroundColor: Colors.transparent,
   );
 
-  //================================================================
+  //===========================================================
 
   static ThemeData darkTheme = ThemeData(
     textTheme: TextTheme(
+      //for theme
+      displayMedium: TextStyle(
+          fontFamily: 'Amiri',
+          color: Colors.white,
+          fontSize: 25,
+          fontWeight: FontWeight.bold),
+      displayLarge: TextStyle(
+          fontFamily: 'Amiri',
+          color: primaryColor,
+          fontSize: 25,
+          fontWeight: FontWeight.bold),
+      //--------------------
       titleMedium: TextStyle(
           fontFamily: 'Amiri',
           color: Colors.black,
@@ -79,7 +99,7 @@ class MyThemeData {
           fontWeight: FontWeight.w300),
       bodyMedium: TextStyle(
           fontFamily: 'Amiri',
-          color: Colors.white,
+          color: Color(0xffFACC1D),
           fontSize: 25,
           fontWeight: FontWeight.w400),
       bodyLarge: TextStyle(
@@ -110,14 +130,16 @@ class MyThemeData {
           color: Colors.white,
         )),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        selectedItemColor: Colors.yellowAccent,
-        unselectedItemColor: Colors.white,
-        selectedIconTheme: IconThemeData(
-          size: 35,
-        ),
-        unselectedIconTheme: IconThemeData(
-          size: 25,
-        )),
+      selectedItemColor: Colors.yellowAccent,
+      unselectedItemColor: Colors.white,
+      selectedIconTheme: IconThemeData(
+        size: 35,
+      ),
+      unselectedIconTheme: IconThemeData(
+        size: 25,
+      ),
+    ),
+
     dividerColor: darkSecondary,
     scaffoldBackgroundColor: Colors.transparent,
   );

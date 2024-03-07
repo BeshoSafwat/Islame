@@ -7,7 +7,6 @@ import '../providers/my_provider.dart';
 class LanguageBottomSheet extends StatelessWidget {
   LanguageBottomSheet({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<MyProvider>(context);
@@ -23,10 +22,9 @@ class LanguageBottomSheet extends StatelessWidget {
                 provider.changeLanguage("en");
               },
               child: Text("English",
-                  style: TextStyle(
-                      color: provider.languageCode == "en"
-                          ? MyThemeData.primaryColor
-                          : MyThemeData.scecondryColor)),
+                  style: provider.languageCode == "en"
+                      ? Theme.of(context).textTheme.displayLarge
+                      : Theme.of(context).textTheme.displayMedium),
             ),
             if (provider.languageCode == "en") ...[
               Icon(Icons.done, size: 30, color: MyThemeData.primaryColor),
@@ -44,10 +42,9 @@ class LanguageBottomSheet extends StatelessWidget {
                 provider.changeLanguage("ar");
               },
               child: Text("العربية",
-                  style: TextStyle(
-                      color: provider.languageCode == "ar"
-                          ? MyThemeData.primaryColor
-                          : MyThemeData.scecondryColor)),
+                  style: provider.languageCode == "ar"
+                      ? Theme.of(context).textTheme.displayLarge
+                      : Theme.of(context).textTheme.displayMedium),
             ),
             if (provider.languageCode == "ar") ...[
               Icon(Icons.done, size: 30, color: MyThemeData.primaryColor),

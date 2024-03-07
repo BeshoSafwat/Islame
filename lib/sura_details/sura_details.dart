@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:isllame/sura_details/sura_details_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../models/sura_model.dart';
+import '../providers/my_provider.dart';
 
 class SuraDetailsScreen extends StatelessWidget {
   static const String routeName = "SuraDetailsScreen";
@@ -14,6 +16,8 @@ class SuraDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var model = ModalRoute.of(context)!.settings.arguments as SuraModel;
+    var pro = Provider.of<MyProvider>(context);
+
 
     return SafeArea(
       child: ChangeNotifierProvider<SuraDetailsProvider>(
@@ -23,19 +27,21 @@ class SuraDetailsScreen extends StatelessWidget {
           return Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/default_bg.png"),
+                image: AssetImage(pro.getBackgroundPath()),
                 fit: BoxFit.fill,
               ),
             ),
             child: Scaffold(
               appBar: AppBar(
                 title: Text(
-                  "Islame",
+                  AppLocalizations.of(context)!.islamy,
                 ),
               ),
               body: Card(
                 margin: EdgeInsets.all(20),
-                color: Color(0xffF8F8F8).withOpacity(.99),
+                color: pro.themeMode == ThemeMode.light
+                    ? Color(0xffF8F8F8).withOpacity(.99)
+                    : Color(0xff141A2E).withOpacity(.99),
                 shape: UnderlineInputBorder(
                     borderRadius: BorderRadius.circular(25),
                     borderSide: BorderSide(color: Colors.transparent)),
