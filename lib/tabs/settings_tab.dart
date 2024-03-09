@@ -37,6 +37,7 @@ class SettingsTab extends StatelessWidget {
               );
             },
             child: Container(
+              height: 55,
               width: double.infinity,
               padding: EdgeInsets.all(12),
               decoration: BoxDecoration(
@@ -71,6 +72,7 @@ class SettingsTab extends StatelessWidget {
               );
             },
             child: Container(
+              height: 55,
               width: double.infinity,
               padding: EdgeInsets.all(12),
               decoration: BoxDecoration(

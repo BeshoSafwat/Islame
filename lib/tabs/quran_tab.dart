@@ -271,7 +271,7 @@ class QuranTab extends StatelessWidget {
                           AppLocalizations.of(context)!.chaptername,
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
-                        SizedBox(width: 5,),
+                        const SizedBox(width: 5,),
                         Text(
                           AppLocalizations.of(context)!.chapternumber,
                           style: Theme.of(context).textTheme.bodyMedium,

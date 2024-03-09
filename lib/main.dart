@@ -11,11 +11,11 @@ import 'my_theme.dart';
 void main() {
   runApp(ChangeNotifierProvider<MyProvider>(
       create: (context) => MyProvider() ,
-      child: MyApp()));
+      child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
-   MyApp({super.key});
+   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +27,11 @@ class MyApp extends StatelessWidget {
       theme: MyThemeData.lightTheme,
       darkTheme: MyThemeData.darkTheme,
       themeMode: provider.themeMode,
-      locale: Locale("${provider.languageCode}"),
+      locale: Locale(provider.languageCode),
       routes: {
         HomeScreen.routeName: (context) => HomeScreen(),
         SuraDetailsScreen.routeName: (context) => SuraDetailsScreen(),
-        HadethDetails.routeName: (context) => HadethDetails(),
+        HadethDetails.routeName: (context) => const HadethDetails(),
       },
       initialRoute: HomeScreen.routeName,
     );

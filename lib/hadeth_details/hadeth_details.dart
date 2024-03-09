@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/hadeth_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 import '../providers/my_provider.dart';
 
 class HadethDetails extends StatelessWidget {
@@ -32,42 +31,45 @@ class HadethDetails extends StatelessWidget {
             ),
           ),
           body: Card(
-            margin: EdgeInsets.all(20),
+            margin: const EdgeInsets.all(20),
             color: provider.themeMode == ThemeMode.light
-                ? Color(0xffF8F8F8).withOpacity(.99)
-                : Color(0xff141A2E).withOpacity(.99),
+                ? const Color(0xffF8F8F8).withOpacity(.99)
+                : const Color(0xff141A2E).withOpacity(.99),
             shape: UnderlineInputBorder(
                 borderRadius: BorderRadius.circular(25),
-                borderSide: BorderSide(color: Colors.transparent)),
-            child: Column(
-              children: [
-                Text(
-                  model.title,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
-                Divider(
-                  thickness: 3,
-                  indent: 50,
-                  endIndent: 50,
-                ),
-                Expanded(
-                  child: ListView.separated(
-                    separatorBuilder: (context, index) {
-                      return SizedBox(
-                        height: 12,
-                      );
-                    },
-                    itemBuilder: (context, index) {
-                      return Text(
-                        model.content[index],
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context).textTheme.bodyMedium,
-                      );
-                    },
-                    itemCount: model.content.length,
+                borderSide: const BorderSide(color: Colors.transparent)),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Text(
+                    model.title,
+                    style: Theme.of(context).textTheme.bodyMedium,
                   ),
-                ),
-              ],
+                  const Divider(
+                    thickness: 3,
+                    indent: 50,
+                    endIndent: 50,
+                  ),
+                  Expanded(
+                    child: ListView.separated(
+                      separatorBuilder: (context, index) {
+                        return const SizedBox(
+                          height: 12,
+                        );
+                      },
+                      itemBuilder: (context, index) {
+                        return Text(
+                          model.content[index],
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        );
+                      },
+                      itemCount: model.content.length,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

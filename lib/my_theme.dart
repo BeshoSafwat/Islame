@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class MyThemeData {
   static const Color primaryColor = Color(0xffB7935F);
   static const Color scecondryColor = Color(0xff242424);
-  static Color darkPrimary = Color(0xff141A2E);
-  static Color darkSecondary = Color(0xffFACC1D);
+  static const Color darkPrimary = Color(0xff141A2E);
+  static const Color darkSecondary = Color(0xffFACC1D);
+  static const Color darkColor = Colors.white;
 
   static ThemeData lightTheme = ThemeData(
     textTheme: TextTheme(
@@ -138,8 +139,9 @@ class MyThemeData {
       unselectedIconTheme: IconThemeData(
         size: 25,
       ),
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: Color(0xff141A2E),
     ),
-
     dividerColor: darkSecondary,
     scaffoldBackgroundColor: Colors.transparent,
   );

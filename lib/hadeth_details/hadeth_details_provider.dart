@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../models/hadeth_model.dart';
@@ -7,9 +8,10 @@ class HadethDetailsProvider extends ChangeNotifier {
   List<HadethModel> ahadethData = [];
 
   HadethModel? hadethSelected;
-  void selectHadethModel(int index){
-    hadethSelected=ahadethData[index];
-     notifyListeners();
+
+  void selectHadethModel(int index) {
+    hadethSelected = ahadethData[index];
+    notifyListeners();
   }
 
   loadHadethFile() {

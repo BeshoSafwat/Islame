@@ -45,35 +45,38 @@ class SuraDetailsScreen extends StatelessWidget {
                 shape: UnderlineInputBorder(
                     borderRadius: BorderRadius.circular(25),
                     borderSide: BorderSide(color: Colors.transparent)),
-                child: Column(
-                  children: [
-                    Text(
-                      model.name,
-                      style: Theme.of(context).textTheme.bodyMedium,
-                    ),
-                    Divider(
-                      thickness: 3,
-                      indent: 50,
-                      endIndent: 50,
-                    ),
-                    Expanded(
-                      child: ListView.separated(
-                        separatorBuilder: (context, index) {
-                          return SizedBox(
-                            height: 12,
-                          );
-                        },
-                        itemBuilder: (context, index) {
-                          return Text(
-                            provider.verses[index],
-                            textAlign: TextAlign.center,
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          );
-                        },
-                        itemCount: provider.verses.length,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Text(
+                        model.name,
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
-                    ),
-                  ],
+                      Divider(
+                        thickness: 3,
+                        indent: 50,
+                        endIndent: 50,
+                      ),
+                      Expanded(
+                        child: ListView.separated(
+                          separatorBuilder: (context, index) {
+                            return SizedBox(
+                              height: 12,
+                            );
+                          },
+                          itemBuilder: (context, index) {
+                            return Text(
+                              provider.verses[index],
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            );
+                          },
+                          itemCount: provider.verses.length,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

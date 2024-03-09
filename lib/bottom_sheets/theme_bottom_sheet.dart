@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import '../providers/my_provider.dart';
 
 class ThemeBottomSheet extends StatelessWidget {
-  ThemeBottomSheet({super.key});
+  const ThemeBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +27,11 @@ class ThemeBottomSheet extends StatelessWidget {
                           : Theme.of(context).textTheme.displayMedium),
             ),
             if (provider.themeMode == ThemeMode.light) ...[
-              Icon(Icons.done, size: 30, color: MyThemeData.primaryColor),
+              const Icon(Icons.done, size: 30, color: MyThemeData.primaryColor),
             ]
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Row(
@@ -48,7 +48,7 @@ class ThemeBottomSheet extends StatelessWidget {
               ),
             ),
             if (provider.themeMode == ThemeMode.dark) ...[
-              Icon(Icons.done, size: 30, color: MyThemeData.primaryColor),
+              const Icon(Icons.done, size: 30, color: MyThemeData.primaryColor),
             ]
           ],
         )
